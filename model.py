@@ -18,7 +18,6 @@ class NeuralNetwork():
         delta_biases = [np.zeros(biases.shape) for biases in self.biases]
 
         # Update the weights for the final layer
-        # Cost derivative
         cache_value = self.cost_derivative(self.activations_cache[-1], expected_value) 
         delta_weights[-1] = np.outer(cache_value, self.activations_cache[-2]) * learning_rate
         delta_biases[-1] = cache_value * learning_rate
